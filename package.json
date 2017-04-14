@@ -2,6 +2,7 @@
   "name": "docker-js",
   "version": "1.0.0",
   "description": "A javascript utility library for docker",
+  "private": true,
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -28,6 +29,7 @@
   "dependencies": {
     "app-root-path": "^2.0.1",
     "async": "^2.3.0",
+    "js-yaml": "^3.8.3",
     "node-cmd": "^2.0.0",
     "underscore": "^1.8.3"
   }
