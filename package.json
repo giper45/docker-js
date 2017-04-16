@@ -1,8 +1,7 @@
 {
-  "name": "docker-js",
+  "name": "mydockerjs",
   "version": "1.0.0",
   "description": "A javascript utility library for docker",
-  "private": true,
   "main": "index.js",
   "directories": {
     "test": "test"
