@@ -11,7 +11,7 @@ describe('image_mgr Test', function() {
 	})
 
 	it('Should return a list of images' ,function(done) {
-		this.obj.getJSONList(function(data) {
+		this.obj.getJSONList(function(err, data) {
 			console.log("data:") 
 			console.log(JSON.stringify(JSON.parse(data), null, 2) )
 			done()
