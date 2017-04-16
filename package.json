@@ -1,6 +1,6 @@
 {
   "name": "mydockerjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A javascript utility library for docker",
   "main": "index.js",
   "directories": {
