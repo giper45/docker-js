@@ -99,6 +99,97 @@ Available options for the paramsInput are :
 
 
 
+### Docker library 
+
+Import : 
+```
+const dockerJS = require('mydockerjs').docker 
+
+``` 
+
+Get active containers : 
+```
+
+  dockerJS.ps(function(err, dockerContainers) {
+                                if(err) 
+                                        console.log(err) 
+                                else 
+                                        console.log(dockerContainers)
+                        })  
+
+
+```
+Remove all unactive containers : 
+
+```
+dockerJS.rmAll(function(err, data) {
+        utils.print(err, data) 
+})
+
+```
+Run a container : 
+
+```
+dockerJS.run('hello-world', function(err, data) {
+        if(err) 
+        {   
+                console.log("Some err:") 
+                console.log(data) 
+        }   
+
+        else { 
+                console.log(data)
+        }   
+
+})
+
+
+```
+
+run function accept imageName, callback and paramsInput. 
+Available options : 
+* detached : if true add -d flag to docker run 
+* cmd : add a command to the end docker run  
+* name : add a name to running container 
+
+Example : 
+```
+dockerJS.run('daindragon2/debian_useradd', function(err, data) {
+        if(err) 
+        {   
+                console.log("some error") 
+                console.log(err) 
+        }   
+        else {   
+                        console.log("runned") 
+                        console.log(data) 
+                        //Print running containers
+                        dockerJS.ps(function(err, dockerContainers) {
+                                if(err) 
+                                        console.log(err) 
+                                else 
+                                        console.log(dockerContainers)
+                        })  
+                            
+            }   
+
+}, {name:"theContainer", detached:true, cmd:'bash'})
+
+
+```
+
+Docker exec a command : 
+
+```
+dockerJS.exec(nameContainer, command, callback, paramsInput) 
+```
+
+Available options : 
+* detached: if true run the command in detached mode 
+
+
+
+
 
 ## Running the tests
 
