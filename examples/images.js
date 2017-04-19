@@ -1,21 +1,26 @@
-dockerImages = require('../lib/image-mgr.js') 
+const dockerImages = require('../lib/image-mgr.js') ,
+	utils = require('./utils.js') 
 
 
 console.log("Names example:") 
 //Get image names  
 dockerImages.getNames(function(err, json) {
-	if(err) 
-	{
-		console.log("Error: ") 
-		console.log(err) 
-	}
-	else 
-	{
-		console.log("Success") 
-		console.log(json) 
-	}
-
+	utils.print(err,json)
 }, {onlytagged:true})
+
+
+//Get detailed list of images in javascript object
+dockerImages.getDetailedList(function(err, data) {
+	utils.print(err,data)
+
+})
+
+
+//Get json list of images
+dockerImages.getJSONList(function(err, data) {
+	utils.print(err, data)
+})
+
 
 
 

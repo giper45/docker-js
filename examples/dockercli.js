@@ -1,24 +1,12 @@
 //Examples of docker engine 
-dockerJS = require('../lib/docker.js')
+dockerJS = require('../lib/docker.js'),
+utils = require('./utils')
 
-function print(err, data) {
-	if(err) 
-	{
-		console.log("Some error") 
-		console.log(err) 
-	}
-	else 
-	{
-		console.log("success:") 
-		console.log(data) 	
-	}
-
-}
 
 function rmAll() {
 console.log("RM ALL EXAMPLE") 
 dockerJS.rmAll(function(err, data) {
-	print(err, data) 
+	utils.print(err, data) 
 })
 
 }
@@ -66,6 +54,6 @@ dockerJS.run('hello-world', function(err, data) {
 
 }
 //Remove all containers inactive
-rmAll() 
+//rmAll() 
 
 
