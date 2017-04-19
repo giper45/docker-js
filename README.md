@@ -7,47 +7,98 @@ It's already in beta version, documentation , examples and functionality will be
 ```  
 npm install --save mydockerjs 
 ``` 
-to use in your projects. 
 
-If you want to test and try example:   
-``` 
-git clone https://github.com/giper45/docker-js.git 
-```  
-In example 
+to use in your projects. 
+ 
 The library provides : 
 * docker : a docker js library in order to execute docker commands 
 * imageMgr : an image util library to retrieve informations about installed docker images and push / pull images
-* dockerCompose : a docker compose library to run docker compose commands   
+* dockerCompose : a docker compose library to run docker compose commands and parse json objects in yaml docker-compose syntax   
 
 
 
 
+
+If you want to test, to edit or to try example:   
+``` 
+git clone https://github.com/giper45/docker-js.git 
+```  
+
+in examples dir you'll find some example:
+``` 
+cd examples; 
+npm install; 
+node <namejs> 
+
+```
 ### Prerequisites
 
 In order to use you should first install docker engine and docker-compose .
 
 
+### Examples 
+
+All the api provides a simple syntax with callback function and params options : 
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+function nameF(dependentFunctionParameters, callback, paramsInput)
 ```
 
-And repeat
+
+
+#### Docker images   
+Import : 
+```
+const dockerImages = require('mydockerjs').imageMgr
+``` 
+
+Get images name : 
+```
+
+
+//Get image names  
+dockerImages.getNames(function(err, json) {
+        utils.print(err,json)
+}, {onlytagged:true})
 
 ```
-until finished
+
+
+Get detailed list : 
+```
+//Get detailed list of images in javascript object
+dockerImages.getDetailedList(function(err, data) {
+        utils.print(err,data)
+
+})
+
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Get jsonList: 
+```
+//Get json list of images
+dockerImages.getJSONList(function(err, data) {
+        utils.print(err, data)
+})
+
+``` 
+
+Remove untagged images : 
+
+```
+dockerImages.removeUntagged(function(err, data) {
+        utils.print(err, data)
+})
+
+```
+
+Each get function receives a callback and a paramsInput 
+Available options for the paramsInput are : 
+* onlytagged: if true returns only tagged images 
+* filterLabel : TBD
+
+
+
+
 
 ## Running the tests
 
