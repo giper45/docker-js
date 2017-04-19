@@ -14,7 +14,10 @@
     "url": "git+https://github.com/giper45/docker-js.git"
   },
   "keywords": [
-    "docker"
+    "docker",
+    "docker-compose" ,
+   "docker image", 
+   "utility docker library" 
   ],
   "author": "Gaetano Perrone",
   "license": "MIT",
