@@ -1,4 +1,4 @@
-const dockerImages = require('../lib/image-mgr.js') ,
+const dockerImages = require('mydockerjs').imageMgr ,
 	utils = require('./utils.js') 
 
 
