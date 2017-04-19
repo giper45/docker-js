@@ -1,6 +1,6 @@
 {
   "name": "mydockerjs",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A javascript utility library for docker",
   "main": "index.js",
   "directories": {
@@ -15,9 +15,9 @@
   },
   "keywords": [
     "docker",
-    "docker-compose" ,
-   "docker image", 
-   "utility docker library" 
+    "docker-compose",
+    "docker image",
+    "utility docker library"
   ],
   "author": "Gaetano Perrone",
   "license": "MIT",
