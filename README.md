@@ -27,7 +27,6 @@ git clone https://github.com/giper45/docker-js.git
 in examples dir you'll find some example:
 ``` 
 cd examples; 
-npm install; 
 node <namejs> 
 
 ```
