@@ -1,8 +1,7 @@
-const dockerImages = require('mydockerjs').imageMgr ,
+const dockerImages = require('../lib/image-mgr.js'), 
 	utils = require('./utils.js') 
 
 
-console.log("Names example:") 
 //Get image names  
 dockerImages.getNames(function(err, json) {
 	utils.print(err,json)

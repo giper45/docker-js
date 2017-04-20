@@ -1,5 +1,6 @@
 //Examples of docker engine 
-dockerJS = require('mydockerjs').docker,
+//dockerJS = require('mydockerjs').docker,
+dockerJS = require('../lib/docker.js'),
 utils = require('./utils')
 
 
@@ -10,9 +11,18 @@ dockerJS.rmAll(function(err, data) {
 })
 
 }
+//List all container (you have to create and run some container first)
+function psAll() {
 
+			dockerJS.ps(function(err, dockerContainers) {
+				if(err) 
+					console.log(err) 
+				else 
+					console.log(dockerContainers)
+			}) 
 
-function psExample() { 
+}
+function runAndPs() { 
 //PS Example
 dockerJS.run('daindragon2/debian_useradd', function(err, data) {
 	if(err) 
@@ -52,8 +62,62 @@ dockerJS.run('hello-world', function(err, data) {
 })
 
 }
-psExample()
+
+function stopAll() {
+	dockerJS.stopAll(function(err, data) {
+		utils.print(err, data)  
+	})
+
+}
+
+function startAll() {
+	dockerJS.startAll(function(err, data) {
+		utils.print(err, data)  
+	})
+}
+function networkCreateExample() {
+	var flags = {
+ 		     driver : 'bridge',
+		     subnet : '192.168.1.1/24'
+			} 
+
+
+	dockerJS.createNetwork("testRete", function(err, data) {
+		utils.print(err, data) 
+	}, flags) 
+
+	dockerJS.createNetwork("seconda", function(err, data) {
+		utils.print(err, data) 
+	}) 
+}
+
+function networkRemoveExample() {
+	var name = 'testRete' 
+	dockerJS.removeNetwork(name, utils.print)
+}
+function networkPruneExample() {
+	dockerJS.networkPrune(utils.print) 
+}
+
+function networkList()  {
+	dockerJS.networkList(utils.print)
+}
+
+function getInfoContainer() {
+	//Select an existsent container
+	name="silly_minsky"
+	dockerJS.getInfoContainer(name, utils.print)
+}
+
+//networkCreateExample()
+//networkList()
+//networkRemoveExample() 
+//networkPruneExample()
+//psAll()
+//stopAll()
+//startAll()
+//runAndPs()
 //Remove all containers inactive
 //rmAll() 
-
+getInfoContainer() 
 
