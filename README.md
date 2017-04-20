@@ -91,8 +91,9 @@ dockerImages.removeUntagged(function(err, data) {
 
 ```
 
-Each get function receives a callback and a paramsInput 
-Available options for the paramsInput are : 
+Each get function receives a callback and a paramsInput   
+
+Available options for the paramsInput are :  
 * onlytagged: if true returns only tagged images 
 * filterLabel : TBD
 
