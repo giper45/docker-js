@@ -31,12 +31,12 @@ npm install;
 node <namejs> 
 
 ```
-### Prerequisites
+## Prerequisites
 
-In order to use you should first install docker engine and docker-compose .
+In order to use you should first install **docker** engine and **docker-compose**  . The library also uses **curl** .
 
 
-### Examples 
+# Examples 
 
 All the api provides a simple syntax with callback function and params options : 
 ```
@@ -45,7 +45,7 @@ function nameF(dependentFunctionParameters, callback, paramsInput)
 
 
 
-#### Docker images   
+## Docker images   
 Import : 
 ```
 const dockerImages = require('mydockerjs').imageMgr
@@ -99,7 +99,7 @@ Available options for the paramsInput are :
 
 
 
-### Docker library 
+## Docker library 
 
 Import : 
 ```
@@ -189,6 +189,101 @@ Available options :
 
 
 
+Stop all containers: 
+```
+  dockerJS.stopAll(function(err, data) {
+                utils.print(err, data)  
+        })  
+ ```
+ 
+ Start all containers : 
+ ```
+   dockerJS.startAll(function(err, data) {
+                utils.print(err, data)  
+        })  
+ 
+ ```
+
+Create a new network : 
+```
+      var flags = { 
+                     driver : 'bridge',
+                     subnet : '192.168.1.1/24'
+                        }   
+
+
+        dockerJS.createNetwork("testRete", function(err, data) {
+                utils.print(err, data) 
+        }, flags) 
+        
+```
+
+Remove network : 
+```
+   var name = 'testRete' 
+        dockerJS.removeNetwork(name, utils.print)
+```
+Network prune (destroy all inactive networks) : 
+```
+        dockerJS.networkPrune(utils.print) 
+```
+
+Network List : 
+```
+        dockerJS.networkList(utils.print)
+```
+Get infos about a container : 
+```
+  //Select an existsent container
+        name="existentContainer"
+        dockerJS.getInfoContainer(name, utils.print)
+```
+
+## docker-compose 
+To use : 
+```
+  dockerComposer = require('mydockerjs').dockerComposer
+```
+The functions follows this convention : 
+```
+dockerComposer.functionName(
+        pathContainingDockerComposeYaml, 
+        callback,
+        dockerComposeLogF
+        )
+```
+where pathContainingDockerComposeYaml where is located the docker-compose yaml that you want to up / down, callback is called when the  docker-compose command finishes , dockerComposeLogF is a function called each time that docker-compose write a newline on the console (docker-compose writes all logs on **stderr** )  
+
+
+
+docker-compose up : 
+```
+ dockerComposer.up(pathExample, utils.print, function(dataline) {                                                                                                                             
+                        console.log(dataline)                                                                                                                                                                
+                })     
+```
+
+docker-compose down: 
+```
+ dockerComposer.down(pathExample, utils.print, function(dataline) {                                                                                                                             
+                        console.log(dataline)                                                                                                                                                                
+                })     
+```
+
+docker-compose start : 
+TBD
+
+docker-compose stop : 
+TBD
+
+
+## Contributing : 
+
+Fork it!
+Create your feature branch: git checkout -b my-new-feature
+Commit your changes: git commit -am 'Add some feature'
+Push to the branch: git push origin my-new-feature
+Submit a pull request :D
 
 
 ## Running the tests
