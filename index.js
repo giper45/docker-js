@@ -1,13 +1,12 @@
-const imageMgr = require('./lib/image-mgr.js') ,
- dockerComposer = require('./lib/docker-composer.js') ,
- docker = require('./lib/docker.js') 
+const imageMgr = require('./lib/image-mgr.js');
+const dockerComposer = require('./lib/docker-composer.js');
+const docker = require('./lib/docker.js');
+const dockerUtils = require('./lib/docker-utils.js');
 
+const api = {
+  dockerComposer,
+  imageMgr,
+  docker,
+  dockerUtils };
 
-var api = { 
-
-	dockerComposer : dockerComposer,
-	imageMgr : imageMgr, 
-	docker : docker
-};
-
-module.exports = api
+module.exports = api;

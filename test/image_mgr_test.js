@@ -1,21 +1,13 @@
-const expect =  require('chai').expect, 
- appRoot = require('app-root-path'), 
-image_mgr = require(appRoot+'/lib/image-mgr'),
-util = require('util')
+const expect = require('chai').expect;
+const imageManager = require('../lib/image-mgr');
 
-describe('image_mgr Test', function() {
-
-	before(function(done) {
-		this.obj = image_mgr
-		done()
-	})
-
-	it('Should return a list of images' ,function(done) {
-		this.obj.getJSONList(function(err, data) {
-			console.log("data:") 
-			console.log(JSON.stringify(JSON.parse(data), null, 2) )
-			done()
-		})
-	})
-})
-
+describe('image_mgr Test', () => {
+  it('Should return a list of images', (done) => {
+    imageManager.getJSONList((err, data) => {
+      expect(err).to.be.null;
+      console.log('data:');
+      console.log(JSON.stringify(JSON.parse(data), null, 2));
+      done();
+    });
+  });
+});

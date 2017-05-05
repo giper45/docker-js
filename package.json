@@ -31,8 +31,10 @@
   "dependencies": {
     "app-root-path": "^2.0.1",
     "async": "^2.3.0",
+    "command-exists": "^1.2.2",
     "js-yaml": "^3.8.3",
     "node-cmd": "^2.0.0",
+    "ps-node": "^0.1.6",
     "underscore": "^1.8.3"
   }
 }
