@@ -43,8 +43,38 @@ function nameF(dependentFunctionParameters, callback, paramsInput)
 ```
 
 
+## Docker utils  
+Some utility function
+Import: 
+```javascript
+const du = require('mydockerjs').dockerUtils;
+```
+Check if dockerEngine is running: 
+```javascript
+  du.isDockerEngineRunning((err, isRunning) => {
+      //DO SOMETHING
+  }); 
+```
+Check if docker-cli / docker-compose commands are installed: 
+```javascript
+//Docker CLI
+ // ASYNC MODE 
+ du.isDockerCliInstalled((err, isInstalled) => {
+       // DO SOMETHING
+  }); 
+ // SYNC MODE
+   du.isDockerCliInstalledSync() //Return true if docker Cli is installed 
+   
+// Docker COMPOSE
+ //ASYNC MODE
+ du.isDockerComposeInstalled((err, isInstalled) => {
+      // DO SOMETHING
+   }); 
+ //SYNC MODE
+ du.isDockerComposeInstalledSync()
 
-## Docker images   
+```
+## Docker images   
 Import : 
 ```javascript
 const dockerImages = require('mydockerjs').imageMgr
