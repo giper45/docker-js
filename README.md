@@ -1,6 +1,5 @@
 #  mydockerjs
 A  javascript utility library  for docker and docker-compose, it provides a simple javascript wrapper in order to execute docker commands and an api in order to use Docker with a node server. 
-It's already in beta version, documentation , examples and functionality will be done soon.  
 
 ## Getting Started
 
@@ -86,8 +85,7 @@ Get images name :
 
 //Get image names  
 dockerImages.getNames(function(err, json) {
-        utils.print(err,json)
-}, {onlytagged:true})
+  utils.print(err,json)}, {onlytagged:true});
 
 ```
 
@@ -96,8 +94,7 @@ Get detailed list :
 ```javascript
 //Get detailed list of images in javascript object
 dockerImages.getDetailedList(function(err, data) {
-        utils.print(err,data)
-
+  utils.print(err,data);
 })
 
 ```
@@ -106,7 +103,7 @@ Get jsonList:
 ```javascript
 //Get json list of images
 dockerImages.getJSONList(function(err, data) {
-        utils.print(err, data)
+  utils.print(err, data);
 })
 
 ``` 
@@ -115,7 +112,7 @@ Remove untagged images :
 
 ```javascript
 dockerImages.removeUntagged(function(err, data) {
-        utils.print(err, data)
+utils.print(err, data);
 })
 
 ```
@@ -141,11 +138,9 @@ Get active containers :
 ```javascript
 
   dockerJS.ps(function(err, dockerContainers) {
-                                if(err) 
-                                        console.log(err) 
-                                else 
-                                        console.log(dockerContainers)
-                        })  
+    if(err) console.log(err) 
+    else console.log(dockerContainers)
+  })  
 
 
 ```
@@ -153,7 +148,7 @@ Remove all unactive containers :
 
 ```javascript
 dockerJS.rmAll(function(err, data) {
-        utils.print(err, data) 
+  utils.print(err, data) 
 })
 
 ```
@@ -161,16 +156,13 @@ Run a container :
 
 ```javascript
 dockerJS.run('hello-world', function(err, data) {
-        if(err) 
-        {   
-                console.log("Some err:") 
-                console.log(data) 
-        }   
-
-        else { 
-                console.log(data)
-        }   
-
+  if(err) {   
+    console.log("Some err:") 
+    console.log(data) 
+  }   
+  else { 
+    console.log(data)
+  }   
 })
 
 
@@ -185,24 +177,19 @@ Available options :
 Example : 
 ```javascript
 dockerJS.run('daindragon2/debian_useradd', function(err, data) {
-        if(err) 
-        {   
-                console.log("some error") 
-                console.log(err) 
-        }   
-        else {   
-                        console.log("runned") 
-                        console.log(data) 
-                        //Print running containers
-                        dockerJS.ps(function(err, dockerContainers) {
-                                if(err) 
-                                        console.log(err) 
-                                else 
-                                        console.log(dockerContainers)
-                        })  
-                            
-            }   
-
+  if(err) {   
+   console.log("some error");
+   console.log(err); 
+  }   
+else {   
+ console.log("runned") 
+ console.log(data) 
+ //Print running containers
+ dockerJS.ps(function(err, dockerContainers) {
+  if(err)  console.log(err) 
+  else console.log(dockerContainers)
+ })  
+ }   
 }, {name:"theContainer", detached:true, cmd:'bash'})
 
 
@@ -222,51 +209,50 @@ Available options :
 Stop all containers: 
 ```javascript
   dockerJS.stopAll(function(err, data) {
-                utils.print(err, data)  
-        })  
+   utils.print(err, data)  
+  })  
  ```
  
  Start all containers : 
  ```javascript
    dockerJS.startAll(function(err, data) {
-                utils.print(err, data)  
-        })  
+   utils.print(err, data)  
+ })  
  
  ```
 
 Create a new network : 
 ```javascript
-      var flags = { 
-                     driver : 'bridge',
-                     subnet : '192.168.1.1/24'
-                        }   
+var flags = { 
+  driver : 'bridge',
+  subnet : '192.168.1.1/24'
+ }   
 
-
-        dockerJS.createNetwork("testRete", function(err, data) {
-                utils.print(err, data) 
-        }, flags) 
+dockerJS.createNetwork("testRete", function(err, data) {
+  utils.print(err, data) 
+}, flags) 
         
 ```
 
 Remove network : 
 ```javascript
    var name = 'testRete' 
-        dockerJS.removeNetwork(name, utils.print)
+     dockerJS.removeNetwork(name, utils.print)
 ```
 Network prune (destroy all inactive networks) : 
 ```javascript
-        dockerJS.networkPrune(utils.print) 
+ dockerJS.networkPrune(utils.print) 
 ```
 
 Network List : 
 ```javascript
-        dockerJS.networkList(utils.print)
+  dockerJS.networkList(utils.print)
 ```
 Get infos about a container : 
 ```javascript
   //Select an existsent container
-        name="existentContainer"
-        dockerJS.getInfoContainer(name, utils.print)
+ name="existentContainer"
+ dockerJS.getInfoContainer(name, utils.print)
 ```
 
 ## docker-compose 
@@ -277,10 +263,10 @@ To use :
 The functions follows this convention : 
 ```javascript
 dockerComposer.functionName(
-        pathContainingDockerComposeYaml, 
-        callback,
-        dockerComposeLogF
-        )
+  pathContainingDockerComposeYaml, 
+  callback,
+  dockerComposeLogF
+ )
 ```
 where pathContainingDockerComposeYaml where is located the docker-compose yaml that you want to up / down, callback is called when the  docker-compose command finishes , dockerComposeLogF is a function called each time that docker-compose write a newline on the console (docker-compose writes all logs on **stderr** )  
 
@@ -289,15 +275,14 @@ where pathContainingDockerComposeYaml where is located the docker-compose yaml t
 docker-compose up : 
 ```javascript
  dockerComposer.up(pathExample, utils.print, function(dataline) {                                                                                                                             
-                        console.log(dataline)                                                                                                                                                                
-                })     
+   console.log(dataline)                                                                                                                                                                
+ })     
 ```
 
 docker-compose down: 
 ```javascript
  dockerComposer.down(pathExample, utils.print, function(dataline) {                                                                                                                             
-                        console.log(dataline)                                                                                                                                                                
-                })     
+  console.log(dataline)                                                                                                                                                                    });     
 ```
 
 docker-compose start : 
@@ -309,11 +294,15 @@ TBD
 
 ## Contributing : 
 
+Eslint with a relaxed version of Airbnb is used for syntax checking (https://github.com/airbnb/javascript ). Look at the .eslintrc for more informations about which rules are turned off. 
+Before to send ant contribute pls check your code with **eslint** .
+Use github for any issue or improvement you like. 
 * Fork it!
 * Create your feature branch: git checkout -b my-new-feature
+* Check 
 * Commit your changes: git commit -am 'Add some feature'
 * Push to the branch: git push origin my-new-feature
-* Submit a pull request :D
+* Submit a pull request 
 
 
 ## Running the tests
