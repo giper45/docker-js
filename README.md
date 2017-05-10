@@ -270,6 +270,15 @@ dockerComposer.functionName(
 ```
 where pathContainingDockerComposeYaml where is located the docker-compose yaml that you want to up / down, callback is called when the  docker-compose command finishes , dockerComposeLogF is a function called each time that docker-compose write a newline on the console (docker-compose writes all logs on **stderr** )  
 
+Check if a docker-compose lab is Running : 
+```javascript
+dockerComposer.isRunning(path, (err, isRunning) => {
+ if(err) console.log(err); 
+ else if (isRunning) console.log(path+' is running'); 
+ else console.log(path+' is not running'); 
+
+}
+```
 
 
 docker-compose up : 
@@ -283,6 +292,20 @@ docker-compose down:
 ```javascript
  dockerComposer.down(pathExample, utils.print, function(dataline) {                                                                                                                             
   console.log(dataline)                                                                                                                                                                    });     
+```
+
+docker-compose exec: 
+
+```javascript 
+const params = { detached: false };
+const dockerComposer = require('mydockerjs').dockerComposer;
+// cd /Users/gaetanoperrone/DSP_MAIN/giper/ErrorWrongAction; docker-compose exec WrongAction /bin/sh -c "/sql_to_db.sh --db_name='ciccio' --sql_file='notexistent'  "
+const processRef = dockerComposer.exec(PATH_DOCKER_COMPOSE, CONTAINER_NAME, COMMAND, (err) => {
+  console.log('ERR:');
+  console.log(err);
+}, params, (dataline) => {
+  console.log(dataline);
+});
 ```
 
 docker-compose start : 
