@@ -34,6 +34,7 @@
     "command-exists": "^1.2.2",
     "js-yaml": "^3.8.3",
     "node-cmd": "^2.0.0",
+    "node-ps": "0.0.2",
     "ps-node": "^0.1.6",
     "underscore": "^1.8.3"
   }
