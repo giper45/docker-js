@@ -299,7 +299,6 @@ docker-compose exec:
 ```javascript 
 const params = { detached: false };
 const dockerComposer = require('mydockerjs').dockerComposer;
-// cd /Users/gaetanoperrone/DSP_MAIN/giper/ErrorWrongAction; docker-compose exec WrongAction /bin/sh -c "/sql_to_db.sh --db_name='ciccio' --sql_file='notexistent'  "
 const processRef = dockerComposer.exec(PATH_DOCKER_COMPOSE, CONTAINER_NAME, COMMAND, (err) => {
   console.log('ERR:');
   console.log(err);
