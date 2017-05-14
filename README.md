@@ -35,9 +35,15 @@ In order to use you should first install **docker** engine and **docker-compose*
 ## Windows Support (beta)
 Version **1.8.0** and later supports the WindowDockerToolbox. In order to use it you've to run node inside the DockerToolbox Virtual Machine, then everything should work. 
 ## Library Limitations and future improvements    
- - Windows: There is no support for HyperV Windows 10 Pro version but only Docker Toolbox.  
- - Linux/Mac and docker-remote-API: Library uses the **docker remote api version 24** and connects itself to **/var/run/docker.sock** unix socket.  Actually there is no way to change these default parameters  
-  - Windows and docker-remote-API: With Docker Toolbox there is a HTTPS connection to manage, and certificates are required. Library uses default paths in order to find these parameters:    
+ - *Windows*: There is no support for HyperV Windows 10 Pro version but only Docker Toolbox.  
+ - *Linux/Mac and docker-remote-API*: Library uses the **docker remote api version 24** and connects itself to **/var/run/docker.sock** unix socket.  Actually there is no way to change these default parameters  
+  - *Windows and docker-remote-API*: If you're using Docker Toolbox there is an HTTPS connection to manage and certificates are required. Library uses default paths in order to find these parameters:
+
+    - Default Docker IP: **192.168.99.100**    
+    - Default Docker listening port: **2376** 
+    - Certificates path: **%HOMEPATH%/.docker/machine/machines/default** 
+    
+    
  
 
 
