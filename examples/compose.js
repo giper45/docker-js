@@ -2,7 +2,7 @@ const dockerComposer = require('../lib/docker-composer.js');
 const utils = require('./utils.js');
 
 
-const pathExample = './compose_test';
+const pathExample = '/c/Users/Gaetano/git/docker-js/examples/compose_test';
 const UP_TEST = true;
 
 function upExample() {

@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "command-exists": "^1.2.2",
+    "homedir": "^0.6.0",
     "js-yaml": "^3.8.3",
     "node-cmd": "^2.0.0",
     "node-ps": "0.0.2",
