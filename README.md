@@ -31,7 +31,8 @@ node <namejs>
 ```
 ## Prerequisites
 
-In order to use you should first install **docker** engine and **docker-compose**  . The library also uses **curl** .    
+In order to use you should first install **docker** engine and **docker-compose**  . The library also uses **curl** .     
+
 ## Windows Support (beta)
 Version **1.8.0** and later supports the WindowDockerToolbox. In order to use it you've to run node inside the DockerToolbox Virtual Machine, then everything should work. 
 ## Library Limitations and future improvements    
