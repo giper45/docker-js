@@ -1,8 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-
-## [Unreleased]
+## [1.10.0] - 2017-10-02
+### Added
+  Added the flag interactive and the net flag to run command
 ## [1.8.0] - 2017-04-14 
 ### Added   
   - Added the Window Docker toolbox support for docker-compose commands and for docker-remote API. 
