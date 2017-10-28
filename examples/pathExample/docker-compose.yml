@@ -1,0 +1,6 @@
+version: '2'
+services:
+  example:
+    image: 'alpine'
+    stdin_open: true
+    tty: true
