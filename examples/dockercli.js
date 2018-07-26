@@ -1,10 +1,10 @@
 // Examples of docker engine
 // dockerJS = require('mydockerjs').docker,
 // UNCOMMENT WHAT YOU WANT TO USE
-/*
+
 const dockerJS = require('../lib/docker.js');
 const utils = require('./utils');
-
+/*
 
 function rmAll() {
   console.log('RM ALL EXAMPLE');
@@ -12,14 +12,17 @@ function rmAll() {
     utils.print(err, data);
   });
 }
+*/
 // List all container (you have to create and run some container first)
 function psAll() {
-  dockerJS.ps((err, dockerContainers) => {
+  dockerJS.dockerodePS((err, dockerContainers) => {
     if (err)
     { console.log(err); }
     else { console.log(dockerContainers); }
   });
 }
+ psAll();
+/*
 function runAndPs() {
   // PS Example
   dockerJS.run('daindragon2/debian_useradd', (err, data) => {
@@ -98,18 +101,26 @@ function getInfoContainer() {
   dockerJS.getInfoContainer(name, utils.print);
 }
 
-networkCreateExample();
-networkList();
-networkRemoveExample();
-networkPruneExample();
-psAll();
-stopAll();
-startAll();
-runExample();
-runAndPs();
-//  Remove all containers inactive;
-rmAll();
-getInfoContainer();
-
 */
+// networkCreateExample();
+// networkList();
+// networkRemoveExample();
+// networkPruneExample();
+// stopAll();
+// startAll();
+// runExample();
+// runAndPs();
+// //  Remove all containers inactive;
+// rmAll();
+// getInfoContainer();
+
+// dockerJS.getNetwork("blackhatlab_public_network", (err, data) => {
+//   console.log("GET UNIX REQ");
+//   console.log(JSON.parse(data));
+// });
+
+
+
+
+
 
