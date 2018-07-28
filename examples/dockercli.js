@@ -19,7 +19,7 @@ function psAll() {
     if (err)
     { console.log(err); }
     else { console.log(dockerContainers); }
-  });
+  }, true);
 }
  psAll();
 /*
@@ -118,8 +118,6 @@ function getInfoContainer() {
 //   console.log("GET UNIX REQ");
 //   console.log(JSON.parse(data));
 // });
-
-
 
 
 
