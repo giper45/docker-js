@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [2.1] - 2018-10-02
+## [2.2] - 2018-10-02
 Fix   same images and different versions  problem 
 ## [1.10.0] - 2017-10-02
 ### Added
