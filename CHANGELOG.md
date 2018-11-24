@@ -1,8 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [2.2] - 2018-10-02
-Fix   same images and different versions  problem 
+## [2.2.1] - 2018-11-24
+### Changed
+Removed console.dir
+## [2.2] - 2018-11-24
+### Changed
+   same images and different versions  problem 
 ## [1.10.0] - 2017-10-02
 ### Added
   Added the flag interactive and the net flag to run command
