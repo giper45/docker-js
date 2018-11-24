@@ -48,9 +48,9 @@ const util = require('util')
 
 // Get detailed list of images in javascript object
 
-dockerImages.getDetailedList((err, data) => {
-   utils.print(err, data);
-});
+//dockerImages.getDetailedList((err, data) => {
+//   utils.print(err, data);
+//});
 
 
 // // Get json list of images
@@ -58,7 +58,7 @@ dockerImages.getDetailedList((err, data) => {
 //   utils.print(err, data);
 // });
 
-// dockerImages.areImagesInstalled(["dockersecplayground/kali:latest", "ciccio"], (err, data) => {
-//   console.log(data)
-// })
+ dockerImages.areImagesInstalled(["dockersecplayground/kali:latest", "ciccio"], (err, data) => {
+   console.log(data)
+ })
 
