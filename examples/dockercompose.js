@@ -2,19 +2,20 @@
   const utils = require('../lib/utils.js')
   const pathExample = "pathExample"
   dockerComposer.up(pathExample, (err, data) => {
+    console.log(err);
     if (err) {
-      console.log("ERROR")                                                                                                                                                                
-      console.log(err)                                                                                                                                                                
+      console.log("ERROR")
+      console.log(err)
     }
     else {
       console.log(data);
-      dockerComposer.exec(pathExample, "example", "echo 'hello WORLD'", (err) => {
-        if (err) console.log("ERROR") ;
-        dockerComposer.down(pathExample, utils.print)
-      })
+     // dockerComposer.down(pathExample, utils.print)
+     // dockerComposer.exec(pathExample, "example", "echo 'hello WORLD'", (err) => {
+     //   if (err) console.log("nada") ;
+     // })
     }
   } ,
-  function(dataline) {                                                                                                                             
-   console.log(dataline)                                                                                                                                                                
-      });
+  function(dataline) {
+   console.log(dataline)
+      }, "--scale example=3");
 
