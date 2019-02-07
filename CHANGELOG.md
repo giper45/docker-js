@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.4] - 2019-02-07
+### Changed
+Fixed image mgr notify callback 
+
 ## [2.2.1] - 2018-11-24
 ### Changed
 Removed console.dir
