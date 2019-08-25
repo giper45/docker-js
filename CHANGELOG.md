@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [2.5] - 2019-08-25
+## [2.6] - 2019-08-25
 - Added build function
 ## [2.4] - 2019-02-07
 ### Changed
