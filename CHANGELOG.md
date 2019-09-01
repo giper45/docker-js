@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.7] - 2019-08-31
+- Added volume create and remove  
+- Added options to docker run and notify callback
 ## [2.6] - 2019-08-25
 - Added build function
 ## [2.4] - 2019-02-07

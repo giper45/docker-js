@@ -21,7 +21,7 @@ function psAll() {
     else { console.log(dockerContainers); }
   }, true);
 }
- psAll();
+ // psAll();
 /*
 function runAndPs() {
   // PS Example
@@ -102,6 +102,36 @@ function getInfoContainer() {
 }
 
 */
+function createVolume() {
+  const name = 'dsp-ovpn';
+  dockerJS.createVolume(name, utils.print);
+}
+function rmVolume() {
+  const name = 'dsp-ovpn';
+  dockerJS.removeVolume(name, utils.print);
+}
+
+function optionsTest() {
+  //docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm kylemanna/openvpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
+  // var options = {
+  //   logDriver: "none",
+  //   rm: true,
+  //   volumes: [
+  //     {hostPath: "dsp-ovpn", containerPath: "/etc/openvpn"}
+  //   ],
+  //   cmd: "ovpn_initpki"
+  // }
+  var options = {
+    logDriver: "none",
+    // interactive: true,
+    rm: true,
+    volumes: [
+      {hostPath: "dsp-ovpn", containerPath: "/etc/openvpn"}
+    ],
+    cmd: "ovpn_initpki"
+  }
+  dockerJS.run("dockersecplayground/vpn:latest", utils.print, options, utils.notify);
+}
 // networkCreateExample();
 // networkList();
 // networkRemoveExample();
@@ -113,6 +143,9 @@ function getInfoContainer() {
 // //  Remove all containers inactive;
 // rmAll();
 // getInfoContainer();
+// createVolume();
+optionsTest();
+// rmVolume();
 
 // dockerJS.getNetwork("blackhatlab_public_network", (err, data) => {
 //   console.log("GET UNIX REQ");
