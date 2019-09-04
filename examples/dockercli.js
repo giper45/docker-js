@@ -21,6 +21,13 @@ function psAll() {
     else { console.log(dockerContainers); }
   }, true);
 }
+function isRunning() {
+  dockerJS.isRunning("dsp_hacktool_newService", (err, isRunning) => {
+    utils.print(err, isRunning);
+  })
+}
+
+isRunning();
  // psAll();
 /*
 function runAndPs() {
@@ -144,7 +151,7 @@ function optionsTest() {
 // rmAll();
 // getInfoContainer();
 // createVolume();
-optionsTest();
+// optionsTest();
 // rmVolume();
 
 // dockerJS.getNetwork("blackhatlab_public_network", (err, data) => {
