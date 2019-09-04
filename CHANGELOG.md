@@ -1,6 +1,8 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.7.1] - 2019-09-03
+ - Fixed spaces in docker run command
 ## [2.7] - 2019-08-31
 - Added volume create and remove  
 - Added options to docker run and notify callback
