@@ -154,10 +154,10 @@ function optionsTest() {
 // optionsTest();
 // rmVolume();
 
-// dockerJS.getNetwork("blackhatlab_public_network", (err, data) => {
-//   console.log("GET UNIX REQ");
-//   console.log(JSON.parse(data));
-// });
+dockerJS.getNetwork("lab_network_0", (err, data) => {
+  console.log("GET UNIX REQ");
+  console.log(data.IPAM.Config[0].Subnet);
+});
 
 
 
