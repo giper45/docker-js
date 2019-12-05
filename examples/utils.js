@@ -8,3 +8,8 @@ exports.print = function print(err, data) {
     console.log(data);
   }
 };
+
+exports.notify = function notify(m) {
+  console.log("Notify");
+  console.log(m);
+}

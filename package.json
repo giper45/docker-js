@@ -1,6 +1,6 @@
 {
   "name": "mydockerjs",
-  "version": "2.0.0",
+  "version": "2.8.0",
   "description": "A javascript utility library for docker",
   "main": "index.js",
   "directories": {
@@ -34,7 +34,7 @@
     "command-exists": "^1.2.2",
     "dockerode": "^2.5.5",
     "homedir": "^0.6.0",
-    "js-yaml": "^3.8.3",
+    "js-yaml": "^3.13.1",
     "node-cmd": "^2.0.0",
     "node-ps": "0.0.2",
     "ps-node": "^0.1.6",

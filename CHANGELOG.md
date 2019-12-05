@@ -1,6 +1,26 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.9.0] - 2019-09-17  
+- Added support in exec for command containing double quotes
+
+## [2.7.1] - 2019-09-03
+ - Fixed spaces in docker run command
+## [2.7] - 2019-08-31
+- Added volume create and remove  
+- Added options to docker run and notify callback
+## [2.6] - 2019-08-25
+- Added build function
+## [2.4] - 2019-02-07
+### Changed
+Fixed image mgr notify callback 
+
+## [2.2.1] - 2018-11-24
+### Changed
+Removed console.dir
+## [2.2] - 2018-11-24
+### Changed
+   same images and different versions  problem 
 ## [1.10.0] - 2017-10-02
 ### Added
   Added the flag interactive and the net flag to run command
