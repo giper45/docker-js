@@ -1,6 +1,8 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.9.1] - 2019-12-05
+- Added network support fixed spaces
 ## [2.9.0] - 2019-09-17  
 - Added support in exec for command containing double quotes
 
