@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.12.2] - 2020-07-16
+- Added host network feature to docker run
+
 ## [2.12.0] - 2020-06-17
 - Added shmsize
 ## [2.11.0] - 2019-12-17
