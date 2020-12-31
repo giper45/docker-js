@@ -21,6 +21,12 @@ function psAll() {
     else { console.log(dockerContainers); }
   }, true);
 }
+
+function ps() {
+  dockerJS.ps((err, services) => {
+  });
+}
+
 function isRunning() {
   dockerJS.isRunning("dsp_hacktool_newService", (err, isRunning) => {
     utils.print(err, isRunning);
@@ -148,16 +154,17 @@ function optionsTest() {
 // runExample();
 // runAndPs();
 // //  Remove all containers inactive;
+ps();
 // rmAll();
 // getInfoContainer();
 // createVolume();
 // optionsTest();
 // rmVolume();
 
-dockerJS.getNetwork("lab_network_0", (err, data) => {
-  console.log("GET UNIX REQ");
-  console.log(data.IPAM.Config[0].Subnet);
-});
+// dockerJS.getNetwork("lab_network_0", (err, data) => {
+//   console.log("GET UNIX REQ");
+//   console.log(data.IPAM.Config[0].Subnet);
+// });
 
 
 
