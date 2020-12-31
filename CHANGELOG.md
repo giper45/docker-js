@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [2.11.1] - 2019-12-18   
+## [2.11.2] - 2019-12-18   
 - Added build with tag method in docker image   
 
 ## [2.11.0] - 2019-12-17
