@@ -30,7 +30,7 @@ describe('Docker utils test', () => {
     });
   });
 
-  it.only('Should give true if docker-compose is installed', (done) => {
+  it('Should give true if docker-compose is installed', (done) => {
     expect(du.isDockerComposeInstalledSync()).to.be.ok;
 
     du.isDockerComposeInstalled((err, isInstalled) => {
