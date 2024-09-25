@@ -1,5 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
+## [2.15.0] - 2024-09-24
+- Add check `docker compose` as command
 
 ## [2.14.0] - 2020-07-16
 - Added host network feature to docker run
